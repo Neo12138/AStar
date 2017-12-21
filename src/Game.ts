@@ -42,7 +42,7 @@ namespace ns {
             let col = 32;
             let row = 16;
             this.cellSize = 40;
-            let numUnWalkable = Math.floor (0.2 * col * row);
+            let numUnWalkable = Math.floor (0.4 * col * row);
             this.grid = new Grid (col, row, this.cellSize);
 
             for (let i = 0; i < numUnWalkable; i++) {
@@ -78,10 +78,10 @@ namespace ns {
             this.grid.setStartNode(x2,y2);
             this.grid.setEndNode(x,y);
 
-            if(this.pathLine){
+            if(this.pathLine && this.pathLine.parent){
                 this.removeChild(this.pathLine);
             }
-
+            this.grid.reset();
             this.findPath();
         }
 

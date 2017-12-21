@@ -19,6 +19,10 @@ namespace ns {
             this.setGrid (column, row, cellSize);
         }
 
+        public reset():void {
+            this.nodes.forEach(node=>node.reset());
+        }
+
         public setGrid(column: number, row: number, cellSize: number): void {
             this.column = column;
             this.row = row;

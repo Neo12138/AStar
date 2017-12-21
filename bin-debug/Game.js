@@ -41,7 +41,7 @@ var ns;
             var col = 32;
             var row = 16;
             this.cellSize = 40;
-            var numUnWalkable = Math.floor(0.2 * col * row);
+            var numUnWalkable = Math.floor(0.4 * col * row);
             this.grid = new ns.Grid(col, row, this.cellSize);
             for (var i = 0; i < numUnWalkable; i++) {
                 var x = Math.floor(Math.random() * col);
@@ -70,9 +70,10 @@ var ns;
             //let startNode:Node = this.grid.getNode(x2,y2);
             this.grid.setStartNode(x2, y2);
             this.grid.setEndNode(x, y);
-            if (this.pathLine) {
+            if (this.pathLine && this.pathLine.parent) {
                 this.removeChild(this.pathLine);
             }
+            this.grid.reset();
             this.findPath();
         };
         Game.prototype.drawGrid = function () {

@@ -22,7 +22,12 @@ namespace ns {
             this.h = 0;
             this.f = 0;
         }
-
+        public reset():void {
+            this.parent = null;
+            this.g = 0;
+            this.h = 0;
+            this.f = 0;
+        }
         public isIn(list: Node[]): boolean {
             for(let n of list){
                 if(this.x === n.x && this.y === n.y){

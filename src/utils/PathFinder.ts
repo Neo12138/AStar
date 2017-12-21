@@ -163,7 +163,6 @@ namespace ns {
                 });
 
                 //2.d停止。当把终点加入了open list;或者检查完所有点
-                console.log(openList);
                 if(endNode.isIn(openList)){
                     console.log("终点加入open list, 找到路径");
                     break;

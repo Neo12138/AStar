@@ -14,6 +14,9 @@ var ns;
         function Grid(column, row, cellSize) {
             this.setGrid(column, row, cellSize);
         }
+        Grid.prototype.reset = function () {
+            this.nodes.forEach(function (node) { return node.reset(); });
+        };
         Grid.prototype.setGrid = function (column, row, cellSize) {
             this.column = column;
             this.row = row;
